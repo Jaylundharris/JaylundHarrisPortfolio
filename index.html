@@ -8,100 +8,198 @@
     html {
       scroll-behavior: smooth;
     }
-	:root {
---bg-color: #0d0d0d;
---text-color: #f5f5f5;
---card-bg: #1a1a1a;
---border-color: #333;
---accent-color: var(--accent-color);
---header-bg: #111;
---muted-text: #777;
-}
-[data-theme="light"] {
---bg-color: #f5f5f5;
---text-color: #111;
---card-bg: #ffffff;
---border-color: #ddd;
---accent-color: #0077cc;
---header-bg: #f0f0f0;
---muted-text: #555;
-}
+
+    :root {
+      --bg-color: #0d0d0d;
+      --text-color: #f5f5f5;
+      --card-bg: #1a1a1a;
+      --border-color: #333;
+      --accent-color: #4dabf7;
+      --header-bg: #111;
+      --muted-text: #777;
+    }
+
+    [data-theme="light"] {
+      --bg-color: #f5f5f5;
+      --text-color: #111;
+      --card-bg: #ffffff;
+      --border-color: #ddd;
+      --accent-color: #0077cc;
+      --header-bg: #f0f0f0;
+      --muted-text: #555;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #0d0d0d;
-      color: #f5f5f5;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s ease, color 0.3s ease;
     }
+
     header {
-      background: #111;
-      padding: 2rem;
-      text-align: center;
+      background: var(--header-bg);
+      padding: 2rem 1.5rem;
       border-bottom: 1px solid #333;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #4cc9f0;
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
     }
-    nav {
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
       text-align: center;
-      margin-top: 1rem;
     }
+
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent-color);
+    }
+
+    .profile h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      color: var(--accent-color);
+    }
+
+    .profile p {
+      margin: 0;
+      color: var(--muted-text);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
     nav a {
-      margin: 0 1rem;
-      color: #f5f5f5;
+      color: var(--text-color);
       text-decoration: none;
       font-weight: bold;
+      font-size: 0.95rem;
     }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .theme-toggle {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background: transparent;
+      color: var(--text-color);
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .theme-toggle:hover {
+      background: var(--card-bg);
+    }
+
     .container {
       max-width: 900px;
       margin: auto;
-      padding: 2rem;
+      padding: 2rem 1.5rem 3rem;
     }
+
     .section-title {
       font-size: 1.8rem;
       margin-bottom: 1rem;
-      color: #4cc9f0;
+      color: var(--accent-color);
     }
+
     .project {
-      background: #1a1a1a;
+      background: var(--card-bg);
       padding: 1.5rem;
       margin-bottom: 1.5rem;
       border-radius: 8px;
-      border: 1px solid #333;
+      border: 1px solid var(--border-color);
     }
+
+    .project h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .project a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
-      color: #777;
-      margin-top: 4rem;
+      color: var(--muted-text);
+      margin-top: 1rem;
+      border-top: 1px solid #222;
     }
-     @media (min-width: 600px) {
-      .profile {
+
+    @media (min-width: 600px) {
+      <img src="1761837164990.jpg" alt="Headshot of Jaylund Harris" class="profile-photo" />
         flex-direction: row;
         align-items: center;
         text-align: left;
       }
-     }
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Jaylund Harris</h1>
-    <p>Data Analyst • Futures Trader • AI Creator</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="header-inner">
+      <div class="profile">
+        <!-- Make sure profile.jpg exists in your repo -->
+        <img src="profile.jpg" alt="Headshot of Jaylund Harris" class="profile-photo" />
+        <div>
+          <h1>Jaylund Harris</h1>
+          <p>Operations-Focused Data Analyst • SQL • Python • Power BI</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" onclick="toggleTheme()">🌙 / ☀️</button>
+      </nav>
+    </div>
   </header>
 
   <div class="container">
     <section id="about">
       <h2 class="section-title">About Me</h2>
       <p>
-        I am a data analyst and futures trader with strong technical skills in SQL, Python, and data visualization. I build analytical projects that showcase business insights, sports analytics, and operational performance. I also create AI storytelling content and maintain multiple brands across social platforms.
+        I am an operations-focused data analyst and warehouse professional with strong technical skills in SQL, Python,
+        Excel, and Power BI. I build analytical projects that highlight business performance, customer behavior, and
+        operational efficiency. My goal is to use data to improve decision-making for operations, logistics, and business
+        teams.
       </p>
     </section>
 
@@ -110,49 +208,53 @@
 
       <div class="project">
         <h3>📊 Sports Betting Analytics Project</h3>
-        <p>A complete ETL + analysis workflow including data cleaning, SQL queries, Power BI dashboards, and insights for player performance trends.</p>
-        <a href="#">https://github.com/Jaylundharris/Nfl-Sports-Betting-Analytics</a>
+        <p>A complete ETL + analysis workflow including data cleaning, SQL queries, Power BI dashboards, and insights for
+          player performance trends.</p>
+        <a href="#">View Project</a>
       </div>
 
       <div class="project">
         <h3>✈️ Airline Customer Engagement Analysis</h3>
-        <p>Analyzed customer behavior to identify churn risks, loyalty opportunities, and revenue insights using Python + SQL.</p>
-        <a href="#">https://github.com/Jaylundharris/Airline-Customer-Engagement-Loyalty-Project</a>
+        <p>Analyzed customer behavior to identify churn risks, loyalty opportunities, and revenue insights using Python +
+          SQL.</p>
+        <a href="#">View Project</a>
       </div>
 
       <div class="project">
-        <h3>🛒 E‑commerce Operational Analytics</h3>
-        <p>Built a full database from scratch and delivered KPIs for revenue, repeat purchase behavior, and fulfillment efficiency.</p>
-        <a href="#">https://github.com/Jaylundharris/Ecommerce-Ops-Analytics</a>
+        <h3>🛒 E-commerce Operational Analytics</h3>
+        <p>Built a full database from scratch and delivered KPIs for revenue, repeat purchase behavior, and fulfillment
+          efficiency.</p>
+        <a href="#">View Project</a>
       </div>
     </section>
 
-<section id="certifications">
-<h2 class="section-title">Certifications</h2>
-<ul>
-<li>Google IT Support Professional Certificate (Coursera)https://www.coursera.org/account/accomplishments/specialization/ZTZ3WCQD14Z1</li>
-</ul>
-</section>
+    <section id="certifications">
+      <h2 class="section-title">Certifications</h2>
+      <ul>
+        <li>Google IT Support Professional Certificate (Coursera)</li>
+      </ul>
+    </section>
 
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <ul>
+        <li>SQL (Joins, CTEs, Window Functions)</li>
+        <li>Python (Pandas, NumPy, Matplotlib)</li>
+        <li>Power BI (DAX, Dashboards, Data Modeling)</li>
+        <li>Excel (Pivot Tables, VLOOKUP, Power Query)</li>
+        <li>GitHub &amp; Version Control</li>
+      </ul>
+    </section>
 
-<section id="skills">
-<h2 class="section-title">Skills</h2>
-<ul>
-<li>SQL (Joins, CTEs, Window Functions)</li>
-<li>Python (Pandas, NumPy, Matplotlib)</li>
-<li>Power BI (DAX, Dashboards, Data Modeling)</li>
-<li>Excel (Pivot Tables, VLOOKUP, Power Query)</li>
-<li>GitHub & Version Control</li>
-</ul>
-</section>
     <section id="contact">
       <h2 class="section-title">Contact</h2>
       <p>Email: <strong>jaylundharris@gmail.com</strong></p>
-      <p>LinkedIn: <a href="#">https://www.linkedin.com/in/jaylund-harris-571936384/</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/jaylund-harris-571936384/" target="_blank">linkedin.com/in/jaylund-harris-571936384/</a></p>
+      <p>GitHub: <a href="https://github.com/Jaylundharris" target="_blank">github.com/Jaylundharris</a></p>
     </section>
   </div>
 
- <footer>
+  <footer>
     © 2025 Jaylund Harris — Portfolio Website
   </footer>
 
@@ -177,4 +279,3 @@
   </script>
 </body>
 </html>
-
