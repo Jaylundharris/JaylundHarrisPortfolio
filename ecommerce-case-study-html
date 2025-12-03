@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-commerce Operational Analytics Case Study | Jaylund Harris</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #0d0d0d;
+      color: #f5f5f5;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+    a {
+      color: #4dabf7;
+    }
+    h1, h2 {
+      color: #4dabf7;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .hero-img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #333;
+      margin-bottom: 1.5rem;
+    }
+    .section {
+      margin-bottom: 1.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+    <h1>E-commerce Operational Analytics — Case Study</h1>
+    <p><strong>Role:</strong> Data &amp; Operations Analyst (Personal Project)</p>
+    <p><strong>Tools:</strong> SQL, SQLite, Power BI, Excel</p>
+
+    <img src="ecommerce-ops.png" alt="E-commerce Operational Analytics Dashboard" class="hero-img" />
+
+    <div class="section">
+      <h2>Business Question</h2>
+      <p>
+        The goal of this project was to understand how an e-commerce business is performing across revenue, repeat
+        purchasing, and fulfillment efficiency. I wanted to answer questions such as: Which customers drive the most
+        value? How often do customers return? Where are there bottlenecks in the order and shipping process?
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Data &amp; Modeling</h2>
+      <p>
+        I started with a raw e-commerce dataset containing orders, customers, products, and shipping details. I cleaned
+        and standardized the data, then designed a relational schema and loaded everything into a SQLite database
+        using SQL.
+      </p>
+      <p>
+        The core tables included:
+      </p>
+      <ul>
+        <li><strong>Customers</strong> – customer profiles and regions</li>
+        <li><strong>Orders</strong> – order dates, revenue, and status</li>
+        <li><strong>Order Items</strong> – product-level line items</li>
+        <li><strong>Shipments</strong> – shipping times and fulfillment details</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Analysis &amp; KPIs</h2>
+      <p>
+        Using SQL, I created a series of KPIs to understand performance:
+      </p>
+      <ul>
+        <li>Average order value (AOV)</li>
+        <li>Repeat purchase rate by customer</li>
+        <li>Revenue by product category and region</li>
+        <li>Average fulfillment and shipping time</li>
+      </ul>
+      <p>
+        These metrics were then visualized in Power BI to make trends and bottlenecks easy to interpret.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Key Insights</h2>
+      <ul>
+        <li>
+          A small segment of repeat customers contributed a disproportionately high share of total revenue, suggesting
+          an opportunity for targeted loyalty or retention campaigns.
+        </li>
+        <li>
+          Certain product categories showed strong revenue but lower repeat behavior, indicating potential issues with
+          product quality, pricing, or expectations.
+        </li>
+        <li>
+          Orders from specific regions consistently experienced longer fulfillment times, pointing to logistics or
+          warehouse constraints in those areas.
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Outcome</h2>
+      <p>
+        This project demonstrates my ability to design a database from raw data, write SQL to generate meaningful KPIs,
+        and turn those into clear operational insights for an e-commerce business. It mirrors the type of performance
+        reporting and process-improvement analysis I’d deliver in an operations or business analyst role.
+      </p>
+    </div>
+
+    <div class="section">
+      <p>
+        View the full project on GitHub:
+        <a href="https://github.com/Jaylundharris/Ecommerce-Ops-Analytics" target="_blank">
+          Ecommerce-Operations-Analytics
+        </a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
