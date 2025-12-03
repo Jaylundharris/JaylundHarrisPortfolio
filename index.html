@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jaylund Harris Portfolio</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
   <style>
     html {
       scroll-behavior: smooth;
@@ -39,7 +40,7 @@
 
     header {
       background: var(--header-bg);
-      padding: 2rem 1.5rem;
+      padding: 2rem 1.5rem 2.5rem;
       border-bottom: 1px solid #333;
     }
 
@@ -112,6 +113,24 @@
       background: var(--card-bg);
     }
 
+    .resume-btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-color);
+      background: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .resume-btn:hover {
+      background: transparent;
+      color: var(--accent-color);
+    }
+
     .container {
       max-width: 900px;
       margin: auto;
@@ -128,8 +147,15 @@
       background: var(--card-bg);
       padding: 1.5rem;
       margin-bottom: 1.5rem;
-      border-radius: 8px;
+      border-radius: 12px;
       border: 1px solid var(--border-color);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      border-color: var(--accent-color);
     }
 
     .project h3 {
@@ -137,23 +163,38 @@
       margin-bottom: 0.5rem;
     }
 
-    .project-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--accent-color);
-  background: var(--accent-color);
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
+    .project-image {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 0.75rem;
+    }
 
-.project-link:hover {
-  background: transparent;
-  color: var(--accent-color);
-}
+    .project-tech {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--muted-text);
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 0.25rem;
+      margin-right: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-color);
+      background: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .project-link:hover {
+      background: transparent;
+      color: var(--accent-color);
+    }
 
     ul {
       padding-left: 1.2rem;
@@ -168,7 +209,7 @@
     }
 
     @media (min-width: 600px) {
-      <img src="1761837164990.jpg" alt="Headshot of Jaylund Harris" class="profile-photo" />
+      .profile {
         flex-direction: row;
         align-items: center;
         text-align: left;
@@ -183,12 +224,13 @@
       <div class="profile">
         <img src="1761837164990.jpg" alt="Headshot of Jaylund Harris" class="profile-photo" />
         <div>
-  <h1>Jaylund Harris</h1>
-  <p>Operations-Focused Data Analyst • SQL • Python • Power BI</p>
-  <p style="color: var(--muted-text); font-size: 0.95rem;">
-    Milner, GA • Open to Remote & Relocation
-  </p>
-</div>
+          <h1>Jaylund Harris</h1>
+          <p>Operations-Focused Data Analyst • SQL • Python • Power BI</p>
+          <p style="color: var(--muted-text); font-size: 0.95rem;">
+            Milner, GA • Open to Remote &amp; Relocation
+          </p>
+        </div>
+      </div>
 
       <nav>
         <a href="#about">About</a>
@@ -197,8 +239,9 @@
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
         <button class="theme-toggle" type="button" onclick="toggleTheme()">Toggle Theme 🌗</button>
-
       </nav>
+
+      <a href="Jaylund_Harris_Resume.pdf" class="resume-btn" target="_blank">Download Resume (PDF)</a>
     </div>
   </header>
 
@@ -214,41 +257,63 @@
     </section>
 
     <section id="projects">
-  <h2 class="section-title">Projects</h2>
+      <h2 class="section-title">Projects</h2>
 
-  <div class="project">
-    <h3>📊 Sports Betting Analytics Project</h3>
-    <p>Cleaned and transformed large player performance datasets using Python and SQL, created custom metrics, and built Power BI dashboards to uncover trends, outliers, and usage patterns for more informed decision-making.</p>
-    <a href="https://github.com/Jaylundharris/Nfl-Sports-Betting-Analytics"
-       target="_blank"
-       class="project-link">View Project</a>
-  </div>
-
-  <div class="project">
-    <h3>✈️ Airline Customer Engagement Loyalty Project</h3>
-    <p>Analyzed customer behavior and engagement metrics using Python and SQL to identify churn risks, loyalty drivers, and revenue opportunities, supported by clear data visualizations and actionable insights.</p>
-    <a href="https://github.com/Jaylundharris/Airline-Customer-Engagement-Loyalty-Project"
-       target="_blank"
-       class="project-link">View Project</a>
-  </div>
-
-  <div class="project">
-    <h3>🛒 Ecommerce Ops Analytics</h3>
-    <p>Built a full relational database and used SQL to evaluate order behavior, repeat purchasing, and fulfillment efficiency, creating operational KPIs and insights that highlight performance bottlenecks and revenue patterns.</p>
-    <a href="https://github.com/Jaylundharris/Ecommerce-Ops-Analytics"
-       target="_blank"
-       class="project-link">View Project</a>
-  </div>
       <div class="project">
-    <h3>🛒 Stock Market Analysis APPL</h3>
-    <p>Analyzed historical stock data using Python and SQL to identify price trends, monthly returns, volatility patterns, and long-term performance behavior. Built visualizations to highlight movement patterns and insights useful for both traders and long-term investors.</p>
-    <a href="https://github.com/Jaylundharris/Stock_Market_Analysis_APPL"
-       target="_blank"
-       class="project-link">View Project</a>
-  </div>
-</section>
+        <img src="sports-betting-dashboard.png" alt="Sports Betting Analytics Dashboard" class="project-image" />
+        <h3>📊 Sports Betting Analytics Project</h3>
+        <p>
+          Cleaned and transformed large player performance datasets using Python and SQL, created custom metrics,
+          and built Power BI dashboards to uncover trends, outliers, and usage patterns for more informed decision-making.
+        </p>
+        <p class="project-tech"><strong>Tools:</strong> Python, Pandas, SQL, SQLite, Power BI</p>
+        <a href="https://github.com/Jaylundharris/Nfl-Sports-Betting-Analytics" target="_blank" class="project-link">
+          View Code on GitHub
+        </a>
+      </div>
 
+      <div class="project">
+        <img src="airline-engagement.png" alt="Airline Customer Engagement Dashboard" class="project-image" />
+        <h3>✈️ Airline Customer Engagement Analysis</h3>
+        <p>
+          Analyzed customer behavior and engagement metrics using Python and SQL to identify churn risks, loyalty drivers,
+          and revenue opportunities, supported by clear data visualizations and actionable insights.
+        </p>
+        <p class="project-tech"><strong>Tools:</strong> Python, Pandas, SQL, Power BI</p>
+        <a href="https://github.com/Jaylundharris/Airline-Customer-Engagement-Analysis" target="_blank" class="project-link">
+          View Code on GitHub
+        </a>
+      </div>
 
+      <div class="project">
+        <img src="ecommerce-ops.png" alt="E-commerce Operational Analytics Dashboard" class="project-image" />
+        <h3>🛒 E-commerce Operational Analytics</h3>
+        <p>
+          Built a full relational database and used SQL to evaluate order behavior, repeat purchasing, and fulfillment
+          efficiency, creating operational KPIs and insights that highlight performance bottlenecks and revenue patterns.
+        </p>
+        <p class="project-tech"><strong>Tools:</strong> SQL, SQLite, Power BI, Excel</p>
+        <a href="https://github.com/Jaylundharris/Ecommerce-Operations-Analytics" target="_blank" class="project-link">
+          View Code on GitHub
+        </a>
+        <a href="ecommerce-case-study.html" class="project-link" style="background: transparent; color: var(--accent-color);">
+          View Case Study
+        </a>
+      </div>
+
+      <div class="project">
+        <img src="stock-analysis.png" alt="Stock Market Analysis Chart" class="project-image" />
+        <h3>🧾 Stock Market Analysis</h3>
+        <p>
+          Evaluated historical stock data using Python and SQL to analyze monthly returns, volatility patterns, and
+          long-term price trends, supported by visualizations that highlight movement behavior and market cycles.
+        </p>
+        <p class="project-tech"><strong>Tools:</strong> Python, Pandas, Matplotlib, SQLite</p>
+        <a href="https://github.com/Jaylundharris/Apple-Stock-Market-Analysis" target="_blank" class="project-link">
+          View Code on GitHub
+        </a>
+      </div>
+    </section>
 
     <section id="certifications">
       <h2 class="section-title">Certifications</h2>
@@ -270,8 +335,10 @@
 
     <section id="contact">
       <h2 class="section-title">Contact</h2>
-      <p>Email: <a href="mailto:jaylundharris@gmail.com">jaylundharris@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/jaylund-harris-571936384/" target="_blank">linkedin.com/in/jaylund-harris-571936384/</a></p>
+      <p>Email: <a href="mailto:jaylundharris@gmail.com" style="color: var(--accent-color); font-weight: bold;">
+        jaylundharris@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/jaylund-harris-571936384/" target="_blank">
+        linkedin.com/in/jaylund-harris-571936384/</a></p>
       <p>GitHub: <a href="https://github.com/Jaylundharris" target="_blank">github.com/Jaylundharris</a></p>
     </section>
   </div>
@@ -301,10 +368,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
