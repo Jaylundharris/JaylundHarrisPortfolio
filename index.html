@@ -269,179 +269,248 @@
     </div>
   </header>
 
-  <div
-    style="
-        background: var(--card-bg);
-        border-radius: 12px;
-        padding: 25px;
-        box-shadow: var(--card-shadow);
-        max-width: 800px;
-        margin-bottom: 25px;
-    "
->
-    <p>
-        I am an operations-focused data analyst and warehouse professional with strong technical skills in SQL, Python,
-        Excel, and Power BI. I build analytical projects that highlight business performance, customer behavior, and
-        operational efficiency. My goal is to use data to improve decision-making for operations, logistics, and business
-        teams.
-    </p>
-</div>
+ </header>
 
+<main>
+  <div class="container">
 
+    <!-- About Me -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div
+        style="
+          background: var(--card-bg);
+          border-radius: 12px;
+          padding: 25px;
+          box-shadow: var(--card-shadow);
+          margin-bottom: 40px;
+        "
+      >
+        <p>
+          I am an operations-focused data analyst and warehouse professional with strong technical
+          skills in SQL, Python, Excel, and Power BI. I build analytical projects that highlight
+          business performance, customer behavior, and operational efficiency. My goal is to use
+          data to improve decision-making for operations, logistics, and business teams.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects -->
     <section id="projects">
       <h2 class="section-title">Projects</h2>
 
+      <!-- Sports Betting Project -->
       <div class="project">
-        <img src="sports-betting-dashboard.png" alt="Sports Betting Analytics Dashboard" class="project-image" />
-        <h3>📊 Sports Betting Analytics Project</h3>
+        <img
+          src="sports-betting-dashboard.png"
+          alt="Sports Betting Analytics Dashboard"
+          class="project-image"
+        />
+        <h3>🏈 Sports Betting Analytics Project</h3>
         <p>
-          Cleaned and transformed large team performance datasets using Python and SQL, created custom metrics,
-          and built Power BI dashboards to uncover trends, outliers, and betting insights for more informed decision-making.
+          Cleaned and transformed large team performance datasets using Python and SQL, created
+          custom metrics, and built Power BI dashboards to uncover trends, outliers, and betting
+          insights for more informed decision-making.
         </p>
-          <p class="project-tech">
-      <strong>Tools:</strong> Python, SQL, Power BI
-  </p>
-<a href="https://github.com/Jaylundharris/NFL-Sports-Betting-Analytics" target="_blank" class="project-link">
-      View Code on GitHub
-  <a href="nfl-case-study.html" class="project-link">
-      View Case Study
-  </a>
-</div>
-
-      <div class="project">
-        <img src="airline-engagement.png" alt="Airline Customer Engagement Dashboard" class="project-image" />
-        <h3>✈️ Airline Customer Engagement Analysis</h3>
-        <p>
-          Analyzed customer behavior and engagement metrics using Python and SQL to identify churn risks, loyalty drivers,
-          and revenue opportunities, supported by clear data visualizations and actionable insights.
+        <p class="project-tech">
+          <strong>Tools:</strong> Python, SQL, Power BI
         </p>
-        <p class="project-tech"><strong>Tools:</strong> Python, Pandas, SQL, Power BI</p>
-        <a href="https://github.com/Jaylundharris/Airline-Customer-Engagement-Loyalty-Project" target="_blank" class="project-link">
+        <a
+          href="https://github.com/Jaylundharris/NFL-Sports-Betting-Analytics"
+          target="_blank"
+          class="project-link"
+        >
           View Code on GitHub
         </a>
-      </div>
-
-      <div class="project">
-        <img src="ecommerce-ops.png" alt="E-commerce Operational Analytics Dashboard" class="project-image" />
-        <h3>🛒 E-commerce Operational Analytics</h3>
-        <p>
-          Built a full relational database and used SQL to evaluate order behavior, repeat purchasing, and fulfillment
-          efficiency, creating operational KPIs and insights that highlight performance bottlenecks and revenue patterns.
-        </p>
-        <p class="project-tech"><strong>Tools:</strong> SQL, SQLite, Power BI, Excel</p>
-        <a href="https://github.com/Jaylundharris/Ecommerce-Ops-Analytics" target="_blank" class="project-link">
-          View Code on GitHub
-        </a>
-        <a href="ecommerce-case-study.html" class="project-link" style="background: transparent; color: var(--accent-color);">
+        <a href="nfl-case-study.html" class="project-link">
           View Case Study
         </a>
       </div>
 
+      <!-- Airline Project -->
       <div class="project">
-        <img src="stock-analysis.png" alt="Stock Market Analysis Chart" class="project-image" />
-        <h3>🧾 Stock Market Analysis</h3>
+        <img
+          src="airline-engagement.png"
+          alt="Airline Customer Engagement Dashboard"
+          class="project-image"
+        />
+        <h3>✈️ Airline Customer Engagement Analysis</h3>
         <p>
-          Evaluated historical stock data using Python and SQL to analyze monthly returns, volatility patterns, and
-          long-term price trends, supported by visualizations that highlight movement behavior and market cycles.
+          Analyzed customer behavior and engagement metrics using Python and SQL to identify churn
+          risks, loyalty drivers, and revenue opportunities, supported by clear data visualizations
+          and actionable insights.
         </p>
-        <p class="project-tech"><strong>Tools:</strong> Python, Pandas, Matplotlib, SQLite</p>
-        <a href="https://github.com/Jaylundharris/Stock_Market_Analysis_APPL" target="_blank" class="project-link">
+        <p class="project-tech">
+          <strong>Tools:</strong> Python, Pandas, SQL, Power BI
+        </p>
+        <a
+          href="https://github.com/Jaylundharris/Airline-Customer-Engagement-Loyalty-Project"
+          target="_blank"
+          class="project-link"
+        >
+          View Code on GitHub
+        </a>
+      </div>
+
+      <!-- E-commerce Project -->
+      <div class="project">
+        <img
+          src="ecommerce-ops.png"
+          alt="E-commerce Operational Analytics Dashboard"
+          class="project-image"
+        />
+        <h3>🛒 E-commerce Operational Analytics</h3>
+        <p>
+          Built a full relational database and used SQL to evaluate order behavior, repeat
+          purchasing, and fulfillment efficiency, creating operational KPIs and insights that
+          highlight performance bottlenecks and revenue patterns.
+        </p>
+        <p class="project-tech">
+          <strong>Tools:</strong> SQL, SQLite, Power BI, Excel
+        </p>
+        <a
+          href="https://github.com/Jaylundharris/Ecommerce-Ops-Analytics"
+          target="_blank"
+          class="project-link"
+        >
+          View Code on GitHub
+        </a>
+        <a
+          href="ecommerce-case-study.html"
+          class="project-link"
+          style="background: transparent; color: var(--accent-color);"
+        >
+          View Case Study
+        </a>
+      </div>
+
+      <!-- Stock Market Project -->
+      <div class="project">
+        <img
+          src="stock-analysis.png"
+          alt="Stock Market Analysis Chart"
+          class="project-image"
+        />
+        <h3>📈 Stock Market Analysis</h3>
+        <p>
+          Evaluated historical stock data using Python and SQL to analyze monthly returns,
+          volatility patterns, and long-term price trends, supported by visualizations that
+          highlight movement behavior and market cycles.
+        </p>
+        <p class="project-tech">
+          <strong>Tools:</strong> Python, Pandas, Matplotlib, SQLite
+        </p>
+        <a
+          href="https://github.com/Jaylundharris/Stock_Market_Analysis_AAPL"
+          target="_blank"
+          class="project-link"
+        >
           View Code on GitHub
         </a>
       </div>
     </section>
 
+    <!-- Certifications -->
     <section id="certifications" style="margin-top: 60px;">
-    <h2 style="font-size: 28px; margin-bottom: 25px;">Certifications</h2>
+      <h2 class="section-title">Certifications</h2>
 
-    <div style="
-        background: var(--card-bg);
-        border-radius: 12px;
-        padding: 25px;
-        box-shadow: var(--card-shadow);
-        max-width: 800px;
-        margin-bottom: 25px;
-    ">
-
-        <h3 style="margin: 0 0 10px 0; font-size: 22px; font-weight: 600;">
-            Google IT Support Professional Certificate
-        </h3>
-
-        <p style="margin: 0 0 10px 0; line-height: 1.6;">
-            Completed on <strong>October 29, 2025</strong><br>
-            Awarded by Coursera & Google Career Certificates.
+      <div
+        style="
+          background: var(--card-bg);
+          border-radius: 12px;
+          padding: 25px;
+          box-shadow: var(--card-shadow);
+          margin-bottom: 40px;
+        "
+      >
+        <h3 style="margin-top: 0;">Google IT Support Professional Certificate</h3>
+        <p style="margin-bottom: 8px;">
+          Completed on <strong>October 29, 2025</strong><br />
+          Awarded via Coursera &amp; Google Career Certificates.
         </p>
-
-        <a href="https://www.coursera.org/account/accomplishments/specialization/ZTZ3WCQD14Z1"
-           target="_blank"
-           style="color: var(--accent-color); text-decoration: none; font-weight: 600;">
-            🔗 Verify Certificate on Coursera
-        </a>
-    </div>
-</section>
-
-<div
-    style="
-        background: var(--card-bg);
-        border-radius: 12px;
-        padding: 25px;
-        box-shadow: var(--card-shadow);
-        max-width: 800px;
-        margin-bottom: 25px;
-    "
->
-    <ul>
-        <li>SQL (Joins, CTEs, Window Functions)</li>
-        <li>Python (Pandas, NumPy, Matplotlib)</li>
-        <li>Power BI (DAX, Dashboards, Data Modeling)</li>
-        <li>Excel (Pivot Tables, VLOOKUP, Power Query)</li>
-        <li>GitHub &amp; Version Control</li>
-    </ul>
-</div>
-
-
-   <div
-    style="
-        background: var(--card-bg);
-        border-radius: 12px;
-        padding: 25px;
-        box-shadow: var(--card-shadow);
-        max-width: 800px;
-        margin-bottom: 25px;
-    "
->
-    <p>
-        Email:
         <a
+          href="https://www.coursera.org/account/accomplishments/specialization/ZTZ3WCQD14Z1"
+          target="_blank"
+          style="color: var(--accent-color); font-weight: 600; text-decoration: none;"
+        >
+          🔗 Verify Certificate on Coursera
+        </a>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" style="margin-top: 60px;">
+      <h2 class="section-title">Skills</h2>
+
+      <div
+        style="
+          background: var(--card-bg);
+          border-radius: 12px;
+          padding: 25px;
+          box-shadow: var(--card-shadow);
+          margin-bottom: 40px;
+        "
+      >
+        <ul>
+          <li>SQL (Joins, CTEs, Window Functions)</li>
+          <li>Python (Pandas, NumPy, Matplotlib)</li>
+          <li>Power BI (DAX, Dashboards, Data Modeling)</li>
+          <li>Excel (Pivot Tables, VLOOKUP, Power Query)</li>
+          <li>GitHub &amp; Version Control</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="margin-top: 60px;">
+      <h2 class="section-title">Contact</h2>
+
+      <div
+        style="
+          background: var(--card-bg);
+          border-radius: 12px;
+          padding: 25px;
+          box-shadow: var(--card-shadow);
+          margin-bottom: 40px;
+        "
+      >
+        <p>
+          Email:
+          <a
             href="mailto:jaylundharris@gmail.com"
             style="color: var(--accent-color); font-weight: bold;"
-        >
+          >
             jaylundharris@gmail.com
-        </a>
-    </p>
+          </a>
+        </p>
 
-    <p>
-        LinkedIn:
-        <a
+        <p>
+          LinkedIn:
+          <a
             href="https://www.linkedin.com/in/jaylund-harris-571936384/"
             target="_blank"
             style="color: var(--accent-color);"
-        >
+          >
             linkedin.com/in/jaylund-harris-571936384/
-        </a>
-    </p>
+          </a>
+        </p>
 
-    <p>
-        GitHub:
-        <a
+        <p>
+          GitHub:
+          <a
             href="https://github.com/Jaylundharris"
             target="_blank"
             style="color: var(--accent-color);"
-        >
+          >
             github.com/Jaylundharris
-        </a>
-    </p>
-</div>
+          </a>
+        </p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
 
 
   <footer>
@@ -485,6 +554,7 @@ document.getElementById("backToTop").onclick = function() {
 
 </body>
 </html>
+
 
 
 
