@@ -588,14 +588,13 @@ function toggleMoreProjects() {
   const more = document.getElementById("moreProjects");
   const btn = document.getElementById("moreBtn");
 
-  if (more.style.display === "none") {
-    more.style.display = "block";
-    btn.textContent = "Show Less Projects";
-  } else {
-    more.style.display = "none";
-    btn.textContent = "Show More Projects";
-  }
+  if (!more || !btn) return;
+
+  const isHidden = more.style.display === "none" || more.style.display === "";
+  more.style.display = isHidden ? "block" : "none";
+  btn.textContent = isHidden ? "Show Less Projects" : "Show More Projects";
 }
+
 
   </script>
   <button id="backToTop" title="Go to top">↑ Top</button>
@@ -616,6 +615,7 @@ document.getElementById("backToTop").onclick = function() {
 
 </body>
 </html>
+
 
 
 
