@@ -302,60 +302,17 @@
     <section id="projects">
       <h2 class="section-title">Projects</h2>
 
-      <!-- Sports Betting Project -->
       <div class="project">
-        <img
-          src="sports-betting-dashboard.png"
-          alt="Sports Betting Analytics Dashboard"
-          class="project-image"
-        />
-        <h3>🏈 Sports Betting Analytics Project</h3>
-        <p>
-          Cleaned and transformed large team performance datasets using Python and SQL, created
-          custom metrics, and built Power BI dashboards to uncover trends, outliers, and betting
-          insights for more informed decision-making.
-        </p>
-        <p class="project-tech">
-          <strong>Tools:</strong> Python, SQL, Power BI
-        </p>
-        <a
-          href="https://github.com/Jaylundharris/NFL-Sports-Betting-Analytics"
-          target="_blank"
-          class="project-link"
-        >
-          View Code on GitHub
-        </a>
-        <a href="nfl-case-study.html" class="project-link">
-          View Case Study
-        </a>
-      </div>
+  <h3>Supply Chain Analytics Project</h3>
+  <p>
+    Built a supply chain analytics workflow to track operational performance and uncover bottlenecks using SQL, Python, and reporting dashboards.
+  </p>
+  <a href="https://github.com/Jaylundharris/Supply_Chain_Project" target="_blank" rel="noopener noreferrer">
+    View Code on GitHub
+  </a>
+</div>
 
-      <!-- Airline Project -->
-      <div class="project">
-        <img
-          src="airline-engagement.png"
-          alt="Airline Customer Engagement Dashboard"
-          class="project-image"
-        />
-        <h3>✈️ Airline Customer Engagement Analysis</h3>
-        <p>
-          Analyzed customer behavior and engagement metrics using Python and SQL to identify churn
-          risks, loyalty drivers, and revenue opportunities, supported by clear data visualizations
-          and actionable insights.
-        </p>
-        <p class="project-tech">
-          <strong>Tools:</strong> Python, Pandas, SQL, Power BI
-        </p>
-        <a
-          href="https://github.com/Jaylundharris/Airline-Customer-Engagement-Loyalty-Project"
-          target="_blank"
-          class="project-link"
-        >
-          View Code on GitHub
-        </a>
-      </div>
-
-      <!-- E-commerce Project -->
+       <!-- E-commerce Project -->
       <div class="project">
         <img
           src="ecommerce-ops.png"
@@ -387,6 +344,67 @@
         </a>
       </div>
 
+
+      <!-- Sports Betting Project -->
+      <div class="project">
+        <img
+          src="sports-betting-dashboard.png"
+          alt="Sports Betting Analytics Dashboard"
+          class="project-image"
+        />
+        <h3>🏈 Sports Betting Analytics Project</h3>
+        <p>
+          Cleaned and transformed large team performance datasets using Python and SQL, created
+          custom metrics, and built Power BI dashboards to uncover trends, outliers, and betting
+          insights for more informed decision-making.
+        </p>
+        <p class="project-tech">
+          <strong>Tools:</strong> Python, SQL, Power BI
+        </p>
+        <a
+          href="https://github.com/Jaylundharris/NFL-Sports-Betting-Analytics"
+          target="_blank"
+          class="project-link"
+        >
+          View Code on GitHub
+        </a>
+        <a href="nfl-case-study.html" class="project-link">
+          View Case Study
+        </a>
+      </div>
+<button class="more-btn" type="button" onclick="toggleMoreProjects()" id="moreBtn">
+  Show More Projects
+</button>
+
+<div id="moreProjects" class="more-projects" style="display:none;">
+  <!-- Move TWO project cards in here -->
+</div>
+<div id="moreProjects" class="more-projects" style="display:none;">
+      <!-- Airline Project -->
+      <div class="project">
+        <img
+          src="airline-engagement.png"
+          alt="Airline Customer Engagement Dashboard"
+          class="project-image"
+        />
+        <h3>✈️ Airline Customer Engagement Analysis</h3>
+        <p>
+          Analyzed customer behavior and engagement metrics using Python and SQL to identify churn
+          risks, loyalty drivers, and revenue opportunities, supported by clear data visualizations
+          and actionable insights.
+        </p>
+        <p class="project-tech">
+          <strong>Tools:</strong> Python, Pandas, SQL, Power BI
+        </p>
+        <a
+          href="https://github.com/Jaylundharris/Airline-Customer-Engagement-Loyalty-Project"
+          target="_blank"
+          class="project-link"
+        >
+          View Code on GitHub
+        </a>
+      </div>
+
       <!-- Stock Market Project -->
       <div class="project">
         <img
@@ -412,7 +430,7 @@
         </a>
       </div>
     </section>
-
+  </div>
     <!-- Certifications -->
     <section id="certifications" style="margin-top: 60px;">
       <h2 class="section-title">Certifications</h2>
@@ -538,6 +556,19 @@
         localStorage.setItem('theme', 'light');
       }
     }
+    function toggleMoreProjects() {
+  const more = document.getElementById("moreProjects");
+  const btn = document.getElementById("moreBtn");
+
+  if (more.style.display === "none") {
+    more.style.display = "block";
+    btn.textContent = "Show Less";
+  } else {
+    more.style.display = "none";
+    btn.textContent = "Show More Projects";
+  }
+}
+
   </script>
   <button id="backToTop" title="Go to top">↑ Top</button>
 <script>
@@ -557,6 +588,7 @@ document.getElementById("backToTop").onclick = function() {
 
 </body>
 </html>
+
 
 
 
