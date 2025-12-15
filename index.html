@@ -372,14 +372,7 @@
           View Case Study
         </a>
       </div>
-<button class="more-btn" type="button" onclick="toggleMoreProjects()" id="moreBtn">
-  Show More Projects
-</button>
 
-<div id="moreProjects" class="more-projects" style="display:none;">
-  <!-- Move TWO project cards in here -->
-</div>
-<div id="moreProjects" class="more-projects" style="display:none;">
       <!-- Airline Project -->
       <div class="project">
         <img
@@ -430,7 +423,6 @@
         </a>
       </div>
     </section>
-  </div>
     <!-- Certifications -->
     <section id="certifications" style="margin-top: 60px;">
       <h2 class="section-title">Certifications</h2>
@@ -556,18 +548,6 @@
         localStorage.setItem('theme', 'light');
       }
     }
-    function toggleMoreProjects() {
-  const more = document.getElementById("moreProjects");
-  const btn = document.getElementById("moreBtn");
-
-  if (more.style.display === "none") {
-    more.style.display = "block";
-    btn.textContent = "Show Less";
-  } else {
-    more.style.display = "none";
-    btn.textContent = "Show More Projects";
-  }
-}
 
   </script>
   <button id="backToTop" title="Go to top">↑ Top</button>
@@ -588,6 +568,7 @@ document.getElementById("backToTop").onclick = function() {
 
 </body>
 </html>
+
 
 
 
