@@ -137,20 +137,20 @@
     .theme-toggle:hover {
       background: var(--card-bg);
     }
-    .more-btn {
-  margin: 1rem 0 2rem;
-  padding: 0.5rem 1.1rem;
+    .more-btn{
+  margin: 0.5rem 0 1.25rem;
+  padding: 0.45rem 1.1rem;
   border-radius: 999px;
   border: 1px solid var(--border-color);
-  background: var(--card-bg);
+  background: transparent;
   color: var(--text-color);
-  font-weight: bold;
   cursor: pointer;
+  font-weight: 700;
+}
+.more-btn:hover{
+  background: var(--card-bg);
 }
 
-.more-btn:hover {
-  border-color: var(--accent-color);
-}
 
     .resume-btn {
       display: inline-block;
@@ -321,7 +321,7 @@
      <!-- Supply Chain Project -->
 <div class="project">
   <img
-    src="Sku_Breakdown.png"
+    src="Sku Breakdown.png"
     alt="Supply Chain SKU Breakdown Dashboard"
     class="project-image"
   />
@@ -403,9 +403,14 @@
           View Case Study
         </a>
       </div>
-    <div id="moreProjects" style="display:none;">
+   <!-- Show/Hide button -->
 <button class="more-btn" id="moreBtn" onclick="toggleMoreProjects()">
   Show More Projects
+</button>
+
+<!-- Hidden projects start -->
+<div id="moreProjects" style="display:none;">
+
 </button>
       <!-- Airline Project -->
       <div class="project">
@@ -456,7 +461,9 @@
           View Code on GitHub
         </a>
       </div>
-      </div>
+    </div>
+<!-- Hidden projects end -->
+
 
     </section>
     <!-- Certifications -->
@@ -587,13 +594,13 @@
 function toggleMoreProjects() {
   const more = document.getElementById("moreProjects");
   const btn = document.getElementById("moreBtn");
-
   if (!more || !btn) return;
 
   const isHidden = more.style.display === "none" || more.style.display === "";
   more.style.display = isHidden ? "block" : "none";
   btn.textContent = isHidden ? "Show Less Projects" : "Show More Projects";
 }
+
 
 
   </script>
@@ -615,6 +622,7 @@ document.getElementById("backToTop").onclick = function() {
 
 </body>
 </html>
+
 
 
 
