@@ -260,43 +260,46 @@
 
 <body>
   <header style="border-bottom: 1px solid rgba(0,0,0,0.08);">
-  <div class="header-inner" style="max-width: 1300px; margin: 0 auto; padding: 1.5rem 2rem;">
+  <div class="header-inner" style="max-width:1300px; margin:0 auto; padding:2rem 2rem;">
 
-    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap: 1.5rem;">
+    <!-- Top Row -->
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:1.25rem;">
 
-      <!-- LEFT: Identity -->
-      <div class="profile" style="display:flex; align-items:center; gap: 1rem;">
-        <img src="1761837164990.jpg" alt="Headshot of Jaylund Harris" class="profile-photo"
-             style="width: 72px; height: 72px; border-radius: 999px; object-fit: cover;" />
+      <!-- Profile + Info -->
+      <div style="display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; justify-content:center;">
 
-        <div>
-          <h1 style="margin: 0 0 .25rem; font-size: 2rem; line-height:1.1;">Jaylund Harris</h1>
+        <img src="1761837164990.jpg"
+             alt="Headshot of Jaylund Harris"
+             style="width:90px; height:90px; border-radius:999px; object-fit:cover;" />
 
-          <!-- Role -->
-          <p style="margin: 0 0 .35rem; font-weight: 700; opacity: .92;">
-            Operations &amp; Business Intelligence Analyst
+        <div style="text-align:left;">
+          <h1 style="margin:0; font-size:2.4rem; line-height:1.1;">
+            Jaylund Harris
+          </h1>
+
+          <p style="margin:.3rem 0; font-weight:700; opacity:.9;">
+            Operations & Business Intelligence Analyst
           </p>
 
-          <!-- Value proposition -->
-          <p style="margin: 0 0 .5rem; opacity: .85; max-width: 62ch; line-height:1.5;">
+          <p style="margin:.4rem 0; opacity:.85; max-width:550px;">
             I build end-to-end analytics systems (SQL + cloud + Power BI) that turn raw data into decision-ready insights across executive and operational layers.
           </p>
 
-          <!-- Stack + location -->
-          <p style="margin: 0 0 .25rem; font-weight: 600; opacity: .85;">
+          <p style="margin:.4rem 0; font-weight:600; opacity:.85;">
             Power BI • SQL • Snowflake • Azure • Python
           </p>
 
-          <p style="margin: 0; color: var(--muted-text); font-size: 0.95rem;">
-            Milner, GA • Open to Remote &amp; Relocation
+          <p style="margin:0; font-size:.95rem; color:var(--muted-text);">
+            Milner, GA • Open to Remote & Relocation
           </p>
         </div>
+
       </div>
 
-      <!-- RIGHT: Actions -->
-      <div style="display:flex; align-items:center; gap: 1rem; flex-wrap:wrap; justify-content:flex-end;">
+      <!-- Navigation Row -->
+      <div style="display:flex; align-items:center; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
 
-        <nav style="display:flex; gap: .9rem; flex-wrap:wrap; align-items:center;">
+        <nav style="display:flex; gap:1.25rem; flex-wrap:wrap; align-items:center;">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#certifications">Certifications</a>
@@ -307,17 +310,21 @@
           </button>
         </nav>
 
-        <a href="Jaylund_Harris_Operations_Data_Analyst_Resume.pdf" class="resume-btn" target="_blank"
-           style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
+        <a href="Jaylund_Harris_Operations_Data_Analyst_Resume.pdf"
+           target="_blank"
+           style="display:inline-flex; align-items:center; justify-content:center;
+                  padding:.85rem 1.3rem; border-radius:.85rem;
+                  background:#0b4dd9; color:#fff;
+                  text-decoration:none; font-weight:700;">
           Download Resume (PDF)
         </a>
 
       </div>
+
     </div>
 
   </div>
 </header>
-
 <main>
   <div class="container">
 
@@ -842,6 +849,7 @@ document.getElementById("backToTop").onclick = function() {
 
 </body>
 </html>
+
 
 
 
