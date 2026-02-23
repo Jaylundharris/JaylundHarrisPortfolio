@@ -313,70 +313,127 @@
   <h2>Projects</h2>
     
 
-    <section id="featured-atlasops" style="padding: 4rem 0;">
-  <div style="max-width: 1300px; margin: 0 auto; padding: 0 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
+    <!-- ==========================
+     PROJECT HERO: ATLASOPS (FEATURED CASE STUDY)
+     Matches Nexora + E-commerce styling
+     ========================== -->
+<section id="featured-atlasops" style="padding: 4rem 0;">
+  <div style="max-width: 1300px; margin: 0 auto; padding: 0 2rem;">
 
-    <!-- LEFT: TEXT -->
-    <div style="flex: 1 1 40%; min-width: 350px;">
-      <h1 style="font-size: 2.8rem; margin-bottom: .5rem;">
-        AtlasOps Intelligence Platform
-      </h1>
-
-      <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        An end-to-end cloud analytics platform built to simulate enterprise operational intelligence across multiple U.S. regions. Architected using Azure Blob, Snowflake (star schema modeling), and Power BI — delivered as a structured Power BI Service App.
-      </p>
-
-      <ul style="line-height: 1.7; margin-bottom: 1.5rem;">
-        <li>Cloud ingestion → transformation → reporting architecture</li>
-        <li>Star schema modeling (fact & dimension design)</li>
-        <li>Multi-layer reporting strategy</li>
-        <li>Forecast integration for operational planning</li>
-      </ul>
-
-      <div>
-        <a href="https://github.com/Jaylundharris/AtlasOps_Intelligence_Platform" target="_blank"
-           style="padding: .9rem 1.3rem; background: #0b4dd9; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; margin-right: 1rem;">
-           View GitHub
-        </a>
-
-        <a href="YOUR_VIDEO_LINK" target="_blank"
-           style="padding: .9rem 1.3rem; background: #f0f0f0; color: #111; border-radius: 8px; text-decoration: none; font-weight: 600;">
-           Watch Walkthrough
-        </a>
-      </div>
+    <!-- Eyebrow / tags -->
+    <div style="display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom: 1rem;">
+      <span style="font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; opacity:.75;">Featured Case Study</span>
+      <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 102, 255, .08); color:#0b4dd9; font-weight:600;">
+        Operations Intelligence
+      </span>
+      <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 0, 0, .05); font-weight:600;">
+        Azure Blob → Snowflake → Power BI
+      </span>
     </div>
 
-    <!-- RIGHT: LARGE IMAGE -->
-<div style="flex: 1 1 54%; min-width: 380px; display:flex; flex-direction:column; gap: 1rem;">
-        
-        <!-- Main dashboard screenshot -->
-        <figure style="margin:0;">
-          
-          <img src="atlasops_executiveoverview.png" alt="AtlasOps Executive Overview"
-               style="width:100%; height:auto; border-radius:14px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); object-fit:contain;">
-          <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
-            Executive overview: Total Revenue, Operating Cost, Orders Processed, Late Orders, Revenue State-Level Breakdown.
-          </figcaption>
-        </figure>
+    <!-- Layout: text left / images right -->
+    <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap: 3.5rem;">
 
-          <figure style="margin:0;">
-            
-            <img src="atlasops_historyoverview.png" alt="Atlas Ops History"
-                 style="width:100%; height:auto; border-radius:14px; box-shadow: 0 12px 30px rgba(0,0,0,0.10); object-fit:contain;">
-            <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
-              History Overview: Anamoly Detection & Forecasting Orders.
-            </figcaption>
-          </figure>
+      <!-- LEFT: TEXT -->
+      <div style="flex: 1 1 42%; min-width: 340px;">
+
+        <h2 style="margin:0; font-size: clamp(2.1rem, 3vw, 2.8rem); line-height:1.15;">
+          AtlasOps Intelligence Platform
+        </h2>
+
+        <p style="margin:.85rem 0 0; font-size:1.05rem; line-height:1.7; opacity:.92; max-width: 56ch;">
+          End-to-end cloud analytics platform built to simulate enterprise operational intelligence across multiple U.S. regions.
+          Architected using <strong>Azure Blob</strong> for raw ingestion, <strong>Snowflake</strong> for ELT and <strong>star schema</strong> modeling,
+          and <strong>Power BI</strong> for multi-layer reporting — delivered as a structured <strong>Power BI Service App</strong>.
+        </p>
+
+        <!-- Business Objective -->
+        <div style="margin-top: 1.25rem;">
+          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Business Objective</h3>
+          <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
+            <li>Provide leadership a single view of performance across region → state → city → warehouse.</li>
+            <li>Identify drivers of late orders and operational bottlenecks.</li>
+            <li>Evaluate department and employee contribution to errors and throughput.</li>
+            <li>Detect historical anomalies and forecast near-term demand.</li>
+          </ul>
+        </div>
+
+        <!-- Key Insights -->
+        <div style="margin-top: 1.25rem;">
+          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">What the App Enables</h3>
+          <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
+            <li>Drilldowns from map-level views to warehouse-specific performance.</li>
+            <li>Anomaly selection to identify which factors contributed to spikes/drops.</li>
+            <li>Forecast adjustments to compare expected volume across time windows.</li>
+          </ul>
+        </div>
+
+        <!-- Tech stack pills -->
+        <div style="display:flex; flex-wrap:wrap; gap:.5rem; margin-top: 1.25rem;">
+          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Azure Blob</span>
+          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Snowflake</span>
+          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">SQL</span>
+          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Power BI</span>
+          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Power BI Service</span>
+        </div>
+
+        <!-- Architecture Flow -->
+        <div style="margin-top: 1.25rem;">
+          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Architecture</h3>
+          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+                      font-size:.92rem; background:rgba(0,0,0,.05); padding:.75rem 1rem; border-radius:12px; line-height:1.55;">
+            Azure Blob → Snowflake (ELT + Star Schema) → Curated Views → Power BI → Power BI Service App
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top: 1.25rem;">
+          <a href="https://github.com/Jaylundharris/AtlasOps_Intelligence_Platform" target="_blank" rel="noopener"
+             style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
+            View GitHub Repository
+          </a>
+
+          <!-- Optional: add your video link when ready -->
+          <a href="YOUR_ATLASOPS_WALKTHROUGH_LINK" target="_blank" rel="noopener"
+             style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:rgba(0,0,0,.06); color:#111; text-decoration:none; font-weight:700;">
+            Watch Walkthrough
+          </a>
         </div>
 
       </div>
 
-      <!-- ==========================
+      <!-- RIGHT: VISUALS -->
+      <div style="flex: 1 1 54%; min-width: 380px; display:flex; flex-direction:column; gap: 1rem;">
+
+        <figure style="margin:0;">
+          <img src="atlasops_executiveoverview.png" alt="AtlasOps Executive Overview"
+               style="width:100%; height:auto; border-radius:14px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); object-fit:contain;">
+          <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
+            Executive overview: revenue, cost, orders processed, late orders, and geo performance.
+          </figcaption>
+        </figure>
+
+        <figure style="margin:0;">
+          <img src="atlasops_historyoverview.png" alt="AtlasOps History & Forecast"
+               style="width:100%; height:auto; border-radius:14px; box-shadow: 0 12px 30px rgba(0,0,0,0.10); object-fit:contain;">
+          <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
+            History overview: anomaly analysis and order forecasting.
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+     <!-- ==========================
      PROJECT HERO: NEXORA (CASE STUDY)
+     Matches AtlasOps + E-commerce styling
      ========================== -->
 <section id="featured-nexora" style="padding: 4rem 0; border-top: 1px solid rgba(0,0,0,0.08);">
   <div style="max-width: 1300px; margin: 0 auto; padding: 0 2rem;">
-    
+
     <!-- Eyebrow / tags -->
     <div style="display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom: 1rem;">
       <span style="font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; opacity:.75;">Case Study</span>
@@ -390,36 +447,37 @@
 
     <!-- Layout: text left / images right -->
     <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap: 3.5rem;">
-      
+
       <!-- LEFT: TEXT -->
       <div style="flex: 1 1 42%; min-width: 340px;">
-        
+
         <h2 style="margin:0; font-size: clamp(1.9rem, 2.8vw, 2.5rem); line-height:1.15;">
           Nexora Sales Analytics Platform
         </h2>
 
-        <p style="margin:.85rem 0 0; font-size:1.05rem; line-height:1.7; opacity:.92; max-width: 52ch;">
-          End-to-end CRM analytics built to simulate executive sales intelligence for a SaaS business. 
-          Modeled in <strong>Snowflake</strong> using a <strong>star schema</strong> (including stage history) and delivered through interactive <strong>Power BI</strong> dashboards for revenue, funnel conversion, and regional performance.
+        <p style="margin:.85rem 0 0; font-size:1.05rem; line-height:1.7; opacity:.92; max-width: 56ch;">
+          End-to-end CRM analytics project simulating executive sales intelligence for a SaaS business.
+          Modeled in <strong>Snowflake</strong> using a <strong>star schema</strong> (including stage history) and delivered through interactive
+          <strong>Power BI</strong> dashboards for revenue, funnel conversion, and regional performance.
         </p>
 
-        <!-- What it solves -->
+        <!-- Business Objective -->
         <div style="margin-top: 1.25rem;">
           <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Business Objective</h3>
           <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
             <li>Create a single source of truth for revenue, conversion, and sales efficiency.</li>
             <li>Reveal funnel drop-off by stage and identify where deals are lost.</li>
-            <li>Compare region performance (East/Central/West) and surface drivers.</li>
+            <li>Compare regional performance (East/Central/West) and surface drivers.</li>
             <li>Measure rep and lead-source contribution to closed revenue.</li>
           </ul>
         </div>
 
-        <!-- Key insights (short + punchy) -->
+        <!-- Key Insights -->
         <div style="margin-top: 1.25rem;">
           <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Key Insights</h3>
           <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
-            <li>Regional performance differences were driven by conversion + cycle time, not just lead volume.</li>
-            <li>Funnel drop-off was highest at the negotiation stage, indicating process risk late in the cycle.</li>
+            <li>Regional differences were driven by conversion rate and sales cycle time, not just lead volume.</li>
+            <li>Largest funnel drop-off occurred at negotiation — indicating late-stage process risk.</li>
             <li>Partnerships and LinkedIn outperformed other sources in conversion and revenue contribution.</li>
           </ul>
         </div>
@@ -433,36 +491,54 @@
           <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Funnel Analytics</span>
         </div>
 
+        <!-- Architecture Flow -->
+        <div style="margin-top: 1.25rem;">
+          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Architecture</h3>
+          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+                      font-size:.92rem; background:rgba(0,0,0,.05); padding:.75rem 1rem; border-radius:12px; line-height:1.55;">
+            CRM Data → Snowflake (SQL Transformations + Star Schema) → Power BI → Executive Dashboards
+          </div>
+        </div>
+
         <!-- CTAs -->
         <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top: 1.25rem;">
-          <!-- TODO: Replace with your repo link -->
           <a href="https://github.com/Jaylundharris/Nexora_Sales_Analytics" target="_blank" rel="noopener"
              style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
             View GitHub Repository
-          </a>  
+          </a>
+
+          <!-- Optional: add your walkthrough link if you have one -->
+          <a href="YOUR_NEXORA_WALKTHROUGH_LINK" target="_blank" rel="noopener"
+             style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:rgba(0,0,0,.06); color:#111; text-decoration:none; font-weight:700;">
+            Watch Walkthrough
+          </a>
         </div>
+
       </div>
 
-      
-
-
-        
       <!-- RIGHT: VISUALS -->
       <div style="flex: 1 1 54%; min-width: 380px; display:flex; flex-direction:column; gap: 1rem;">
-        
-        <!-- Main dashboard screenshot -->
+
+        <!-- Replace these with your actual filenames on the portfolio -->
         <figure style="margin:0;">
-          
-          <img src="CRM_sales_overview.png" alt="Nexora Sales Overview Dashboard"
+          <img src="nexora_sales_overview.png" alt="Nexora Sales Overview"
                style="width:100%; height:auto; border-radius:14px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); object-fit:contain;">
           <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
             Executive overview: revenue, deal size, cycle time, rep performance, and funnel conversion.
           </figcaption>
         </figure>
 
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
           <figure style="margin:0;">
-            
-            <img src="CRM_Sales_Over_Time.png" alt="Nexora Sales Over Time"
+            <img src="nexora_star_schema.png" alt="Nexora Star Schema"
+                 style="width:100%; height:auto; border-radius:14px; box-shadow: 0 12px 30px rgba(0,0,0,0.10); object-fit:contain;">
+            <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
+              Star schema with stage history.
+            </figcaption>
+          </figure>
+
+          <figure style="margin:0;">
+            <img src="nexora_sales_trends.png" alt="Nexora Sales Trends"
                  style="width:100%; height:auto; border-radius:14px; box-shadow: 0 12px 30px rgba(0,0,0,0.10); object-fit:contain;">
             <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
               Sales over time: momentum and seasonality.
@@ -475,6 +551,7 @@
     </div>
   </div>
 </section>
+      
     <!-- ==========================
      PROJECT HERO: E-COMMERCE OPS (CASE STUDY)
      Matches AtlasOps + Nexora styling
@@ -744,6 +821,7 @@ document.getElementById("backToTop").onclick = function() {
 
 </body>
 </html>
+
 
 
 
