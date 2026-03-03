@@ -5,126 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jaylund Harris Portfolio</title>
   <link rel="icon" type="image/png" href="favicon.png" />
+
   <style>
-    /* Back to Top Button */
-#backToTop {
-  display: none;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 1000;
-  font-size: 1rem;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  background: var(--accent-color);
-  color: #fff;
-  cursor: pointer;
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
-}
+    html { scroll-behavior: smooth; }
 
-#backToTop:hover {
-  opacity: 1;
-}
-
-    html {
-      scroll-behavior: smooth;
+    :root{
+      --bg-color:#0d0d0d;
+      --text-color:#f5f5f5;
+      --card-bg:#1a1a1a;
+      --border-color:#333;
+      --accent-color:#4dabf7;
+      --header-bg:#111;
+      --muted-text:#777;
     }
 
-    :root {
-      --bg-color: #0d0d0d;
-      --text-color: #f5f5f5;
-      --card-bg: #1a1a1a;
-      --border-color: #333;
-      --accent-color: #4dabf7;
-      --header-bg: #111;
-      --muted-text: #777;
+    [data-theme="light"]{
+      --bg-color:#f5f5f5;
+      --text-color:#111;
+      --card-bg:#ffffff;
+      --border-color:#ddd;
+      --accent-color:#0077cc;
+      --header-bg:#f0f0f0;
+      --muted-text:#555;
     }
 
-      [data-theme="light"] {
-      --bg-color: #f5f5f5;
-      --text-color: #111;
-      --card-bg: #ffffff;
-      --border-color: #ddd;
-      --accent-color: #0077cc;
-      --header-bg: #f0f0f0;
-      --muted-text: #555;
-
-    }
-
-    body {
+    body{
       font-family: Arial, sans-serif;
-      margin: 0;
+      margin:0;
       background: var(--bg-color);
       color: var(--text-color);
       transition: background 0.3s ease, color 0.3s ease;
     }
 
-    header {
-      background: var(--header-bg);
-      padding: 2rem 1.5rem 2.5rem;
-      border-bottom: 1px solid #333;
-    } 
-
-
-
-    .header-inner {
+    /* reusable containers */
+    .container{
       max-width: 900px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
+      padding: 2rem 1.5rem 3rem;
+    }
+    .wide-wrap{
+      padding: 4rem 0;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    .wide-inner{
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    .profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      text-align: center;
+    /* header */
+    header{
+      background: var(--header-bg);
+      padding: 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-
-    .profile-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent-color);
-    }
-
-    .profile h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      color: var(--accent-color);
-    }
-
-    .profile p {
-      margin: 0;
-      color: var(--muted-text);
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    nav a {
+    nav a{
       color: var(--text-color);
-      text-decoration: none;
-      font-weight: bold;
+      text-decoration:none;
+      font-weight:700;
       font-size: 0.95rem;
     }
+    nav a:hover{ text-decoration: underline; }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .theme-toggle {
+    .theme-toggle{
       padding: 0.4rem 0.8rem;
       border-radius: 999px;
       border: 1px solid var(--border-color);
@@ -132,658 +75,430 @@
       color: var(--text-color);
       cursor: pointer;
       font-size: 0.9rem;
+      font-weight: 700;
     }
+    .theme-toggle:hover{ background: var(--card-bg); }
 
-    .theme-toggle:hover {
-      background: var(--card-bg);
-    }
-    .more-btn{
-  margin: 0.5rem 0 1.25rem;
-  padding: 0.45rem 1.1rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-color);
-  background: transparent;
-  color: var(--text-color);
-  cursor: pointer;
-  font-weight: 700;
-}
-.more-btn:hover{
-  background: var(--card-bg);
-}
-
-
-    .resume-btn {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.45rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent-color);
-      background: var(--accent-color);
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-
-    .resume-btn:hover {
-      background: transparent;
-      color: var(--accent-color);
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 1.5rem 3rem;
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: var(--accent-color);
-    }
-
-    .project {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 12px;
-      border: 1px solid var(--border-color);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-      border-color: var(--accent-color);
-    }
-
-    .project h3 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-image {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      margin-bottom: 0.75rem;
-    }
-
-    .project-tech {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--muted-text);
-    }
-
-    .project-link {
-      display: inline-block;
-      margin-top: 0.25rem;
-      margin-right: 0.4rem;
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent-color);
-      background: var(--accent-color);
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-
-    .project-link:hover {
-      background: transparent;
-      color: var(--accent-color);
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    footer {
-      text-align: center;
+    /* footer */
+    footer{
+      text-align:center;
       padding: 2rem;
       color: var(--muted-text);
       margin-top: 1rem;
       border-top: 1px solid #222;
     }
 
-    @media (min-width: 600px) {
-      .profile {
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
-      }
+    /* Back to Top Button */
+    #backToTop{
+      display:none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+      font-size: 1rem;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: var(--accent-color);
+      color:#fff;
+      cursor:pointer;
+      opacity:0.85;
+      transition: opacity 0.3s ease;
     }
+    #backToTop:hover{ opacity:1; }
   </style>
 </head>
-  
 
 <body>
-  <header style="border-bottom: 1px solid rgba(0,0,0,0.08);">
-  <div class="header-inner" style="max-width:1300px; margin:0 auto; padding:2rem 2rem;">
 
-    <!-- Top Row -->
-    <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:1.25rem;">
+  <!-- ==========================
+       HEADER
+       ========================== -->
+  <header>
+    <div class="wide-inner" style="padding:2rem 2rem;">
+      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:1.25rem;">
 
-      <!-- Profile + Info -->
-      <div style="display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; justify-content:center;">
+        <div style="display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; justify-content:center;">
+          <img src="1761837164990.jpg"
+               alt="Headshot of Jaylund Harris"
+               style="width:90px; height:90px; border-radius:999px; object-fit:cover; border:3px solid var(--accent-color);" />
 
-        <img src="1761837164990.jpg"
-             alt="Headshot of Jaylund Harris"
-             style="width:90px; height:90px; border-radius:999px; object-fit:cover;" />
+          <div style="text-align:left;">
+            <h1 style="margin:0; font-size:2.4rem; line-height:1.1; color: var(--accent-color);">
+              Jaylund Harris
+            </h1>
 
-        <div style="text-align:left;">
-          <h1 style="margin:0; font-size:2.4rem; line-height:1.1;">
-            Jaylund Harris
-          </h1>
+            <p style="margin:.3rem 0; font-weight:700; opacity:.9;">
+              Operations &amp; Business Intelligence Analyst
+            </p>
 
-          <p style="margin:.3rem 0; font-weight:700; opacity:.9;">
-            Operations & Business Intelligence Analyst
-          </p>
+            <p style="margin:.4rem 0; opacity:.85; max-width:550px;">
+              I build end-to-end analytics systems (SQL + cloud + Power BI) that turn raw data into decision-ready insights across executive and operational layers.
+            </p>
 
-          <p style="margin:.4rem 0; opacity:.85; max-width:550px;">
-            I build end-to-end analytics systems (SQL + cloud + Power BI) that turn raw data into decision-ready insights across executive and operational layers.
-          </p>
+            <p style="margin:.4rem 0; font-weight:600; opacity:.85;">
+              Power BI • SQL • Snowflake • Azure • Python
+            </p>
 
-          <p style="margin:.4rem 0; font-weight:600; opacity:.85;">
-            Power BI • SQL • Snowflake • Azure • Python
-          </p>
+            <p style="margin:0; font-size:.95rem; color:var(--muted-text);">
+              Milner, GA • Open to Remote &amp; Relocation
+            </p>
+          </div>
+        </div>
 
-          <p style="margin:0; font-size:.95rem; color:var(--muted-text);">
-            Milner, GA • Open to Remote & Relocation
-          </p>
+        <div style="display:flex; align-items:center; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+          <nav style="display:flex; gap:1.25rem; flex-wrap:wrap; align-items:center;">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <button class="theme-toggle" type="button" onclick="toggleTheme()">Toggle Theme 🌗</button>
+          </nav>
+
+          <a href="Jaylund_Harris_Business_Intelligence_Resume.pdf" target="_blank" rel="noopener"
+             style="display:inline-flex; align-items:center; justify-content:center;
+                    padding:.85rem 1.3rem; border-radius:.85rem;
+                    background:#0b4dd9; color:#fff;
+                    text-decoration:none; font-weight:700;">
+            Download Resume (PDF)
+          </a>
         </div>
 
       </div>
-
-      <!-- Navigation Row -->
-      <div style="display:flex; align-items:center; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
-
-        <nav style="display:flex; gap:1.25rem; flex-wrap:wrap; align-items:center;">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-          <button class="theme-toggle" type="button" onclick="toggleTheme()">
-            Toggle Theme 🌗
-          </button>
-        </nav>
-
-        <a href="Jaylund_Harris_Business_Intelligence_Resume.pdf"
-           target="_blank"
-           style="display:inline-flex; align-items:center; justify-content:center;
-                  padding:.85rem 1.3rem; border-radius:.85rem;
-                  background:#0b4dd9; color:#fff;
-                  text-decoration:none; font-weight:700;">
-          Download Resume (PDF)
-        </a>
-
-      </div>
-
     </div>
+  </header>
 
-  </div>
-</header>
-<main>
-  <div class="container">
-
-    <section id="about" style="margin: 3rem 0;">
-  <h2>About Me</h2>
-  <p>
-    I’m a Business Intelligence & Operations Analyst professional focused on turning raw data into structured insights that drive operational and strategic decisions.
-    My work bridges the gap between data architecture, analytical modeling, and business storytelling.
-  </p>
-  <p>
-    I design and implement end-to-end analytics systems starting with data ingestion and modeling, and ending with dashboards and forecasts that
-    empower leaders to identify performance drivers, optimize processes, and plan with confidence.
-  </p>
-</section>
-
-    <!-- Projects -->
-    <section id="projects" style="margin: 3rem 0;">
-  <h2>Projects</h2>
-    
+  <main>
 
     <!-- ==========================
-     PROJECT HERO: ATLASOPS (FEATURED CASE STUDY)
-     Matches Nexora + E-commerce styling
-     ========================== -->
-<section id="featured-atlasops" style="padding: 4rem 0;">
-  <div style="max-width: 1300px; margin: 0 auto; padding: 0 2rem;">
-
-    <!-- Eyebrow / tags -->
-    <div style="display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom: 1rem;">
-      <span style="font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; opacity:.75;">Featured Case Study</span>
-      <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 102, 255, .08); color:#0b4dd9; font-weight:600;">
-        Operations Intelligence
-      </span>
-      <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 0, 0, .05); font-weight:600;">
-        Azure Blob → Snowflake → Power BI
-      </span>
-    </div>
-
-    <!-- Layout: text left / images right -->
-    <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap: 3.5rem;">
-
-      <!-- LEFT: TEXT -->
-      <div style="flex: 1 1 42%; min-width: 340px;">
-
-        <h2 style="margin:0; font-size: clamp(2.1rem, 3vw, 2.8rem); line-height:1.15;">
-          AtlasOps Intelligence Platform
-        </h2>
-
-        <p style="margin:.85rem 0 0; font-size:1.05rem; line-height:1.7; opacity:.92; max-width: 56ch;">
-          End-to-end cloud analytics platform built to simulate enterprise operational intelligence across multiple U.S. regions.
-          Architected using <strong>Azure Blob</strong> for raw ingestion, <strong>Snowflake</strong> for ELT and <strong>star schema</strong> modeling,
-          and <strong>Power BI</strong> for multi-layer reporting — delivered as a structured <strong>Power BI Service App</strong>.
+         ABOUT (normal container)
+         ========================== -->
+    <div class="container">
+      <section id="about" style="margin: 3rem 0;">
+        <h2>About Me</h2>
+        <p>
+          I’m a Business Intelligence &amp; Operations Analyst focused on turning raw data into structured insights that drive operational and strategic decisions.
+          My work bridges the gap between data architecture, analytical modeling, and business storytelling.
         </p>
-
-        <!-- Business Objective -->
-        <div style="margin-top: 1.25rem;">
-          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Business Objective</h3>
-          <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
-            <li>Provide leadership a single view of performance across region → state → city → warehouse.</li>
-            <li>Identify drivers of late orders and operational bottlenecks.</li>
-            <li>Evaluate department and employee contribution to errors and throughput.</li>
-            <li>Detect historical anomalies and forecast near-term demand.</li>
-          </ul>
-        </div>
-
-        <!-- Key Insights -->
-        <div style="margin-top: 1.25rem;">
-          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">What the App Enables</h3>
-          <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
-            <li>Drilldowns from map-level views to warehouse-specific performance.</li>
-            <li>Anomaly selection to identify which factors contributed to spikes/drops.</li>
-            <li>Forecast adjustments to compare expected volume across time windows.</li>
-          </ul>
-        </div>
-
-        <!-- Tech stack pills -->
-        <div style="display:flex; flex-wrap:wrap; gap:.5rem; margin-top: 1.25rem;">
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Azure Blob</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Snowflake</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">SQL</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Power BI</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Power BI Service</span>
-        </div>
-
-        <!-- Architecture Flow -->
-        <div style="margin-top: 1.25rem;">
-          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Architecture</h3>
-          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-                      font-size:.92rem; background:rgba(0,0,0,.05); padding:.75rem 1rem; border-radius:12px; line-height:1.55;">
-            Azure Blob → Snowflake (ELT + Star Schema) → Curated Views → Power BI → Power BI Service App
-          </div>
-        </div>
-
-        <!-- CTAs -->
-        <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top: 1.25rem;">
-          <a href="https://github.com/Jaylundharris/AtlasOps_Intelligence_Platform" target="_blank" rel="noopener"
-             style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
-            View GitHub Repository
-          </a>
-        </div>
-
-      </div>
-
-      <!-- RIGHT: VISUALS -->
-      <div style="flex: 1 1 54%; min-width: 380px; display:flex; flex-direction:column; gap: 1rem;">
-
-        <figure style="margin:0;">
-          <img src="atlasops_executiveoverview.png" alt="AtlasOps Executive Overview"
-               style="width:100%; height:auto; border-radius:14px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); object-fit:contain;">
-          <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
-            Executive overview: revenue, cost, orders processed, late orders, and geo performance.
-          </figcaption>
-        </figure>
-
-        <figure style="margin:0;">
-          <img src="atlasops_historyoverview.png" alt="AtlasOps History & Forecast"
-               style="width:100%; height:auto; border-radius:14px; box-shadow: 0 12px 30px rgba(0,0,0,0.10); object-fit:contain;">
-          <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
-            History overview: anomaly analysis and order forecasting.
-          </figcaption>
-        </figure>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-     <!-- ==========================
-     PROJECT HERO: NEXORA (CASE STUDY)
-     Matches AtlasOps + E-commerce styling
-     ========================== -->
-<section id="featured-nexora" style="padding: 4rem 0; border-top: 1px solid rgba(0,0,0,0.08);">
-  <div style="max-width: 1300px; margin: 0 auto; padding: 0 2rem;">
-
-    <!-- Eyebrow / tags -->
-    <div style="display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom: 1rem;">
-      <span style="font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; opacity:.75;">Case Study</span>
-      <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 102, 255, .08); color:#0b4dd9; font-weight:600;">
-        Sales Intelligence
-      </span>
-      <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 0, 0, .05); font-weight:600;">
-        Snowflake → Power BI
-      </span>
-    </div>
-
-    <!-- Layout: text left / images right -->
-    <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap: 3.5rem;">
-
-      <!-- LEFT: TEXT -->
-      <div style="flex: 1 1 42%; min-width: 340px;">
-
-        <h2 style="margin:0; font-size: clamp(1.9rem, 2.8vw, 2.5rem); line-height:1.15;">
-          Nexora Sales Analytics Platform
-        </h2>
-
-        <p style="margin:.85rem 0 0; font-size:1.05rem; line-height:1.7; opacity:.92; max-width: 56ch;">
-          End-to-end CRM analytics project simulating executive sales intelligence for a SaaS business.
-          Modeled in <strong>Snowflake</strong> using a <strong>star schema</strong> (including stage history) and delivered through interactive
-          <strong>Power BI</strong> dashboards for revenue, funnel conversion, and regional performance.
+        <p>
+          I design and implement end-to-end analytics systems starting with data ingestion and modeling, and ending with dashboards and forecasts that
+          empower leaders to identify performance drivers, optimize processes, and plan with confidence.
         </p>
-
-        <!-- Business Objective -->
-        <div style="margin-top: 1.25rem;">
-          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Business Objective</h3>
-          <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
-            <li>Create a single source of truth for revenue, conversion, and sales efficiency.</li>
-            <li>Reveal funnel drop-off by stage and identify where deals are lost.</li>
-            <li>Compare regional performance (East/Central/West) and surface drivers.</li>
-            <li>Measure rep and lead-source contribution to closed revenue.</li>
-          </ul>
-        </div>
-
-        <!-- Key Insights -->
-        <div style="margin-top: 1.25rem;">
-          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Key Insights</h3>
-          <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
-            <li>Regional differences were driven by conversion rate and sales cycle time, not just lead volume.</li>
-            <li>Largest funnel drop-off occurred at negotiation — indicating late-stage process risk.</li>
-            <li>Partnerships and LinkedIn outperformed other sources in conversion and revenue contribution.</li>
-          </ul>
-        </div>
-
-        <!-- Tech stack pills -->
-        <div style="display:flex; flex-wrap:wrap; gap:.5rem; margin-top: 1.25rem;">
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Snowflake</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">SQL</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Power BI</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Star Schema</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Funnel Analytics</span>
-        </div>
-
-        <!-- Architecture Flow -->
-        <div style="margin-top: 1.25rem;">
-          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Architecture</h3>
-          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-                      font-size:.92rem; background:rgba(0,0,0,.05); padding:.75rem 1rem; border-radius:12px; line-height:1.55;">
-            CRM Data → Snowflake (SQL Transformations + Star Schema) → Power BI → Executive Dashboards
-          </div>
-        </div>
-
-        <!-- CTAs -->
-        <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top: 1.25rem;">
-          <a href="https://github.com/Jaylundharris/Nexora_Sales_Analytics" target="_blank" rel="noopener"
-             style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
-            View GitHub Repository
-          </a>
-        </div>
-
-      </div>
-
-      <!-- RIGHT: VISUALS -->
-      <div style="flex: 1 1 54%; min-width: 380px; display:flex; flex-direction:column; gap: 1rem;">
-
-        <!-- Replace these with your actual filenames on the portfolio -->
-        <figure style="margin:0;">
-          <img src="CRM_sales_overview.png" alt="Nexora Sales Overview"
-               style="width:100%; height:auto; border-radius:14px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); object-fit:contain;">
-          <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
-            Executive overview: revenue, deal size, cycle time, rep performance, and funnel conversion.
-          </figcaption>
-        </figure>
-
-        <div style="flex: 1 1 54%; min-width: 380px; display:flex; flex-direction:column; gap: 1rem;">
-          <figure style="margin:0;">
-            <img src="CRM_Sales_Over_Time.png" alt="Nexora Sales Trends"
-                 style="width:100%; height:auto; border-radius:14px; box-shadow: 0 12px 30px rgba(0,0,0,0.10); object-fit:contain;">
-            <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
-              Sales over time: momentum and seasonality.
-            </figcaption>
-          </figure>
-        </div>
-
-      </div>
-
+      </section>
     </div>
-  </div>
-</section>
-      
+
     <!-- ==========================
-     PROJECT HERO: E-COMMERCE OPS (CASE STUDY)
-     Matches AtlasOps + Nexora styling
-     ========================== -->
-<section id="featured-ecommerce" style="padding: 4rem 0; border-top: 1px solid rgba(0,0,0,0.08);">
-  <div style="max-width: 1300px; margin: 0 auto; padding: 0 2rem;">
+         PROJECTS (full-width)
+         ========================== -->
+    <section id="projects" class="wide-wrap" style="border-top:none;">
+      <div class="wide-inner">
+        <h2 style="margin:0 0 1.25rem;">Projects</h2>
+      </div>
 
-    <!-- Eyebrow / tags -->
-    <div style="display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom: 1rem;">
-      <span style="font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; opacity:.75;">Case Study</span>
-      <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 102, 255, .08); color:#0b4dd9; font-weight:600;">
-        Operations & Logistics
-      </span>
-      <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 0, 0, .05); font-weight:600;">
-        CSV → Python → SQL → Power BI
-      </span>
-    </div>
+      <!-- ========== ATLASOPS ========== -->
+      <section id="featured-atlasops" style="padding: 2rem 0 0;">
+        <div class="wide-inner">
 
-    <!-- Layout: text left / images right -->
-    <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap: 3.5rem;">
+          <div style="display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom: 1rem;">
+            <span style="font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; opacity:.75;">Featured Case Study</span>
+            <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 102, 255, .08); color:#0b4dd9; font-weight:600;">
+              Operations Intelligence
+            </span>
+            <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 0, 0, .05); font-weight:600;">
+              Azure Blob → Snowflake → Power BI
+            </span>
+          </div>
 
-      <!-- LEFT: TEXT -->
-      <div style="flex: 1 1 42%; min-width: 340px;">
+          <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap: 3.5rem;">
+            <div style="flex: 1 1 42%; min-width: 340px;">
+              <h2 style="margin:0; font-size: clamp(2.1rem, 3vw, 2.8rem); line-height:1.15;">
+                AtlasOps Intelligence Platform
+              </h2>
 
-        <h2 style="margin:0; font-size: clamp(1.9rem, 2.8vw, 2.5rem); line-height:1.15;">
-          E-Commerce Operations Analytics
-        </h2>
+              <p style="margin:.85rem 0 0; font-size:1.05rem; line-height:1.7; opacity:.92; max-width: 56ch;">
+                End-to-end cloud analytics platform built to simulate enterprise operational intelligence across multiple U.S. regions.
+                Architected using <strong>Azure Blob</strong> for raw ingestion, <strong>Snowflake</strong> for ELT and <strong>star schema</strong> modeling,
+                and <strong>Power BI</strong> for multi-layer reporting — delivered as a structured <strong>Power BI Service App</strong>.
+              </p>
 
-        <p style="margin:.85rem 0 0; font-size:1.05rem; line-height:1.7; opacity:.92; max-width: 56ch;">
-          End-to-end operations analytics project analyzing customer orders, products, returns, inventory, and shipments.
-          Built from raw CSVs through a cleaned relational database and delivered via an interactive Power BI dashboard to surface revenue drivers,
-          return behavior, and shipping performance.
-        </p>
+              <div style="margin-top: 1.25rem;">
+                <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Business Objective</h3>
+                <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
+                  <li>Provide leadership a single view of performance across region → state → city → warehouse.</li>
+                  <li>Identify drivers of late orders and operational bottlenecks.</li>
+                  <li>Evaluate department and employee contribution to errors and throughput.</li>
+                  <li>Detect historical anomalies and forecast near-term demand.</li>
+                </ul>
+              </div>
 
-        <!-- Business Objective -->
-        <div style="margin-top: 1.25rem;">
-          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Business Objective</h3>
-          <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
-            <li>Build a reliable dataset from multiple raw operational CSVs (customers, orders, items, returns, inventory, shipments).</li>
-            <li>Create a single source of truth in SQL to answer revenue, return-rate, and fulfillment efficiency questions.</li>
-            <li>Identify top revenue categories/products, repeat customers, and delivery performance by carrier/warehouse.</li>
-            <li>Deliver stakeholder-ready insights and recommendations through Power BI.</li>
-          </ul>
+              <div style="margin-top: 1.25rem;">
+                <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Architecture</h3>
+                <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+                            font-size:.92rem; background:rgba(0,0,0,.05); padding:.75rem 1rem; border-radius:12px; line-height:1.55;">
+                  Azure Blob → Snowflake (ELT + Star Schema) → Curated Views → Power BI → Power BI Service App
+                </div>
+              </div>
+
+              <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top: 1.25rem;">
+                <a href="https://github.com/Jaylundharris/AtlasOps_Intelligence_Platform" target="_blank" rel="noopener"
+                   style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
+                  View GitHub Repository
+                </a>
+              </div>
+            </div>
+
+            <div style="flex: 1 1 54%; min-width: 380px; display:flex; flex-direction:column; gap: 1rem;">
+              <figure style="margin:0;">
+                <img src="atlasops_executiveoverview.png" alt="AtlasOps Executive Overview"
+                     style="width:100%; height:auto; border-radius:14px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); object-fit:contain;">
+                <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
+                  Executive overview: revenue, cost, orders processed, late orders, and geo performance.
+                </figcaption>
+              </figure>
+
+              <figure style="margin:0;">
+                <img src="atlasops_historyoverview.png" alt="AtlasOps History & Forecast"
+                     style="width:100%; height:auto; border-radius:14px; box-shadow: 0 12px 30px rgba(0,0,0,0.10); object-fit:contain;">
+                <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
+                  History overview: anomaly analysis and order forecasting.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
         </div>
+      </section>
 
-        <!-- Key Insights -->
-        <div style="margin-top: 1.25rem;">
-          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Key Insights</h3>
-          <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
-            <li>Electronics and Sports were primary revenue drivers, while some high-unit categories contributed lower revenue due to price point.</li>
-            <li>Return behavior was measurable and trackable by category/product, enabling targeted process improvements.</li>
-            <li>Delivery performance varied by carrier/warehouse, highlighting opportunities to optimize fulfillment and reduce late deliveries.</li>
-          </ul>
-        </div>
+      <!-- ========== NEXORA ========== -->
+      <section id="featured-nexora" style="padding: 4rem 0 0;">
+        <div class="wide-inner">
+          <div style="display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom: 1rem;">
+            <span style="font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; opacity:.75;">Case Study</span>
+            <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 102, 255, .08); color:#0b4dd9; font-weight:600;">
+              Sales Intelligence
+            </span>
+            <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 0, 0, .05); font-weight:600;">
+              Snowflake → Power BI
+            </span>
+          </div>
 
-        <!-- Tech stack pills -->
-        <div style="display:flex; flex-wrap:wrap; gap:.5rem; margin-top: 1.25rem;">
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Python (Pandas)</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">SQLite / SQL</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Power BI</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Data Cleaning</span>
-          <span style="font-size:.9rem; padding:.35rem .7rem; border-radius:999px; background:rgba(0,0,0,.05); font-weight:600;">Operational KPIs</span>
-        </div>
+          <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap: 3.5rem;">
+            <div style="flex: 1 1 42%; min-width: 340px;">
+              <h2 style="margin:0; font-size: clamp(1.9rem, 2.8vw, 2.5rem); line-height:1.15;">
+                Nexora Sales Analytics Platform
+              </h2>
 
-        <!-- Architecture Flow -->
-        <div style="margin-top: 1.25rem;">
-          <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Architecture</h3>
-          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-                      font-size:.92rem; background:rgba(0,0,0,.05); padding:.75rem 1rem; border-radius:12px; line-height:1.55;">
-            Raw CSVs → Python Cleaning → Relational SQL Database (SQLite) → SQL Insights → Power BI Dashboard
+              <p style="margin:.85rem 0 0; font-size:1.05rem; line-height:1.7; opacity:.92; max-width: 56ch;">
+                End-to-end CRM analytics project simulating executive sales intelligence for a SaaS business.
+                Modeled in <strong>Snowflake</strong> using a <strong>star schema</strong> (including stage history) and delivered through interactive
+                <strong>Power BI</strong> dashboards for revenue, funnel conversion, and regional performance.
+              </p>
+
+              <div style="margin-top: 1.25rem;">
+                <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Architecture</h3>
+                <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+                            font-size:.92rem; background:rgba(0,0,0,.05); padding:.75rem 1rem; border-radius:12px; line-height:1.55;">
+                  CRM Data → Snowflake (SQL Transformations + Star Schema) → Power BI → Executive Dashboards
+                </div>
+              </div>
+
+              <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top: 1.25rem;">
+                <a href="https://github.com/Jaylundharris/Nexora_Sales_Analytics" target="_blank" rel="noopener"
+                   style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
+                  View GitHub Repository
+                </a>
+              </div>
+            </div>
+
+            <div style="flex: 1 1 54%; min-width: 380px; display:flex; flex-direction:column; gap: 1rem;">
+              <figure style="margin:0;">
+                <img src="CRM_sales_overview.png" alt="Nexora Sales Overview"
+                     style="width:100%; height:auto; border-radius:14px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); object-fit:contain;">
+                <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
+                  Executive overview: revenue, deal size, cycle time, rep performance, and funnel conversion.
+                </figcaption>
+              </figure>
+
+              <figure style="margin:0;">
+                <img src="CRM_Sales_Over_Time.png" alt="Nexora Sales Trends"
+                     style="width:100%; height:auto; border-radius:14px; box-shadow: 0 12px 30px rgba(0,0,0,0.10); object-fit:contain;">
+                <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
+                  Sales over time: momentum and seasonality.
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- CTA -->
-        <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top: 1.25rem;">
-          <a href="https://github.com/Jaylundharris/Ecommerce-Ops-Analytics" target="_blank" rel="noopener"
-             style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
-            View GitHub Repository
+      <!-- ========== ECOMMERCE ========== -->
+      <section id="featured-ecommerce" style="padding: 4rem 0 0;">
+        <div class="wide-inner">
+          <div style="display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom: 1rem;">
+            <span style="font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; opacity:.75;">Case Study</span>
+            <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 102, 255, .08); color:#0b4dd9; font-weight:600;">
+              Operations & Logistics
+            </span>
+            <span style="font-size:.85rem; padding:.25rem .6rem; border-radius:999px; background:rgba(0, 0, 0, .05); font-weight:600;">
+              CSV → Python → SQL → Power BI
+            </span>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap: 3.5rem;">
+            <div style="flex: 1 1 42%; min-width: 340px;">
+              <h2 style="margin:0; font-size: clamp(1.9rem, 2.8vw, 2.5rem); line-height:1.15;">
+                E-Commerce Operations Analytics
+              </h2>
+
+              <p style="margin:.85rem 0 0; font-size:1.05rem; line-height:1.7; opacity:.92; max-width: 56ch;">
+                End-to-end operations analytics project analyzing customer orders, products, returns, inventory, and shipments.
+                Built from raw CSVs through a cleaned relational database and delivered via an interactive Power BI dashboard to surface revenue drivers,
+                return behavior, and shipping performance.
+              </p>
+
+              <div style="margin-top: 1.25rem;">
+                <h3 style="margin:0 0 .55rem; font-size:1.05rem;">Architecture</h3>
+                <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+                            font-size:.92rem; background:rgba(0,0,0,.05); padding:.75rem 1rem; border-radius:12px; line-height:1.55;">
+                  Raw CSVs → Python Cleaning → Relational SQL Database (SQLite) → SQL Insights → Power BI Dashboard
+                </div>
+              </div>
+
+              <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top: 1.25rem;">
+                <a href="https://github.com/Jaylundharris/Ecommerce-Ops-Analytics" target="_blank" rel="noopener"
+                   style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
+                  View GitHub Repository
+                </a>
+              </div>
+            </div>
+
+            <div style="flex: 1 1 54%; min-width: 380px; display:flex; flex-direction:column; gap: 1rem;">
+              <figure style="margin:0;">
+                <img src="EBA68222-121B-4C71-9CF9-9B88BFD40438.png" alt="E-Commerce Operations Dashboard"
+                     style="width:100%; height:auto; border-radius:14px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); object-fit:contain;">
+                <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
+                  Full operational view: revenue, categories/products, returns, and geographic performance.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </section> <!-- ✅ closes #projects -->
+
+    <!-- ==========================
+         SKILLS (full-width)
+         ========================== -->
+    <section id="skills" class="wide-wrap">
+      <div class="wide-inner">
+        <h2 style="margin: 0 0 2rem; font-size: 2rem;">Skills &amp; Technologies</h2>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <div style="padding: 1.75rem; border-radius: 16px; background: rgba(0,0,0,0.03);">
+            <h3 style="margin:0 0 .75rem;">Data Engineering &amp; Modeling</h3>
+            <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
+              <li>Star Schema Design &amp; Fact/Dimension Modeling</li>
+              <li>SQL (CTEs, window functions, aggregation)</li>
+              <li>Cloud Data Platforms (Snowflake, Azure Blob Storage)</li>
+              <li>Data Cleaning &amp; Transformation</li>
+            </ul>
+          </div>
+
+          <div style="padding: 1.75rem; border-radius: 16px; background: rgba(0,0,0,0.03);">
+            <h3 style="margin:0 0 .75rem;">Business Intelligence &amp; Visualization</h3>
+            <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
+              <li>Power BI (Semantic Modeling, DAX, App Publishing)</li>
+              <li>KPI Definition &amp; Executive Dashboards</li>
+              <li>Forecasting &amp; Trend Analysis</li>
+              <li>Interactive Drill-downs &amp; Storytelling</li>
+            </ul>
+          </div>
+
+          <div style="padding: 1.75rem; border-radius: 16px; background: rgba(0,0,0,0.03);">
+            <h3 style="margin:0 0 .75rem;">Analytics Workflow</h3>
+            <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
+              <li>End-to-End Analytics Projects</li>
+              <li>Insight Synthesis &amp; Recommendations</li>
+              <li>Problem Framing with Business Outcomes</li>
+              <li>Cross-Functional Stakeholder Communication</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================
+         CERTIFICATIONS (full-width)
+         ========================== -->
+    <section id="certifications" class="wide-wrap">
+      <div class="wide-inner">
+        <h2 style="margin: 0 0 2rem; font-size: 2rem;">Certifications</h2>
+
+        <div style="display:grid; gap:2rem;">
+          <div style="padding: 1.75rem; border-radius: 16px; background: rgba(0,0,0,0.03);">
+            <h3 style="margin: 0 0 .6rem;">Google IT Support Certificate</h3>
+
+            <p style="margin: 0 0 1rem; line-height: 1.6; opacity: .85;">
+              Covered networking, troubleshooting, Linux systems, and foundational IT concepts.
+              Strengthened my understanding of infrastructure and production environments — supporting work with cloud data platforms
+              and analytics architecture.
+            </p>
+
+            <p style="margin: 0 0 1rem; font-size: .95rem; opacity: .75;">
+              Completed <strong>October 29, 2025</strong><br />
+              Issued by Coursera &amp; Google Career Certificates
+            </p>
+
+            <a href="https://www.coursera.org/account/accomplishments/specialization/ZTZ3WCQD14Z1"
+               target="_blank" rel="noopener"
+               style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
+              Verify Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================
+         CONTACT (full-width)
+         ========================== -->
+    <section id="contact" class="wide-wrap">
+      <div class="wide-inner" style="text-align:center; max-width: 900px;">
+        <h2 style="margin: 0 0 1rem; font-size: 2rem;">Let’s Connect</h2>
+
+        <p style="font-size: 1.1rem; opacity: .85; margin: 0 0 2rem;">
+          Open to Business Intelligence, Operations Analytics, and Data Analyst opportunities.
+          I’m always interested in discussing data-driven problem solving and system design.
+        </p>
+
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <a href="mailto:jaylundharris@gmail.com"
+             style="display:inline-flex; align-items:center; justify-content:center; padding:.9rem 1.3rem; border-radius:10px; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
+            Email Me
+          </a>
+
+          <a href="https://www.linkedin.com/in/jaylund-harris-571936384/" target="_blank" rel="noopener"
+             style="display:inline-flex; align-items:center; justify-content:center; padding:.9rem 1.3rem; border-radius:10px; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
+            LinkedIn
+          </a>
+
+          <a href="https://github.com/Jaylundharris" target="_blank" rel="noopener"
+             style="display:inline-flex; align-items:center; justify-content:center; padding:.9rem 1.3rem; border-radius:10px; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
+            GitHub
           </a>
         </div>
-
       </div>
+    </section>
 
-      <!-- RIGHT: VISUALS -->
-      <div style="flex: 1 1 54%; min-width: 380px; display:flex; flex-direction:column; gap: 1rem;">
-        <figure style="margin:0;">
-          <img src="EBA68222-121B-4C71-9CF9-9B88BFD40438.png" alt="E-Commerce Operations Dashboard"
-               style="width:100%; height:auto; border-radius:14px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); object-fit:contain;">
-          <figcaption style="margin-top:.5rem; font-size:.92rem; opacity:.75;">
-            Full operational view: revenue, categories/products, returns, and geographic performance.
-          </figcaption>
-        </figure>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ==========================
-     SKILLS (Aligned container + typography)
-     ========================== -->
-<section id="skills" style="padding: 4rem 0; border-top: 1px solid rgba(0,0,0,0.08);">
-  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
-
-    <h2 style="margin: 0 0 2rem; font-size: 2rem;">Skills & Technologies</h2>
-
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-
-      <div style="padding: 1.75rem; border-radius: 16px; background: rgba(0,0,0,0.03);">
-        <h3 style="margin:0 0 .75rem;">Data Engineering & Modeling</h3>
-        <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
-          <li>Star Schema Design & Fact/Dimension Modeling</li>
-          <li>SQL (CTEs, window functions, aggregation)</li>
-          <li>Cloud Data Platforms (Snowflake, Azure Blob Storage)</li>
-          <li>Data Cleaning & Transformation</li>
-        </ul>
-      </div>
-
-      <div style="padding: 1.75rem; border-radius: 16px; background: rgba(0,0,0,0.03);">
-        <h3 style="margin:0 0 .75rem;">Business Intelligence & Visualization</h3>
-        <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
-          <li>Power BI (Semantic Modeling, DAX, App Publishing)</li>
-          <li>KPI Definition & Executive Dashboards</li>
-          <li>Forecasting & Trend Analysis</li>
-          <li>Interactive Drill-downs & Storytelling</li>
-        </ul>
-      </div>
-
-      <div style="padding: 1.75rem; border-radius: 16px; background: rgba(0,0,0,0.03);">
-        <h3 style="margin:0 0 .75rem;">Analytics Workflow</h3>
-        <ul style="margin:0; padding-left: 1.1rem; line-height:1.75;">
-          <li>End-to-End Analytics Projects</li>
-          <li>Insight Synthesis & Recommendations</li>
-          <li>Problem Framing with Business Outcomes</li>
-          <li>Cross-Functional Stakeholder Communication</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ==========================
-     CERTIFICATIONS (Aligned container + fixed broken tags)
-     ========================== -->
-<section id="certifications" style="padding: 4rem 0; border-top: 1px solid rgba(0,0,0,0.08);">
-  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
-
-    <h2 style="margin: 0 0 2rem; font-size: 2rem;">Certifications</h2>
-
-    <div style="display: grid; gap: 2rem;">
-
-      <div style="padding: 1.75rem; border-radius: 16px; background: rgba(0,0,0,0.03);">
-        <h3 style="margin: 0 0 .6rem;">Google IT Support Certificate</h3>
-
-        <p style="margin: 0 0 1rem; line-height: 1.6; opacity: .85;">
-          Covered networking, troubleshooting, Linux systems, and foundational IT concepts.
-          Strengthened my understanding of infrastructure and production environments — supporting work with cloud data platforms
-          and analytics architecture.
-        </p>
-
-        <p style="margin: 0 0 1rem; font-size: .95rem; opacity: .75;">
-          Completed <strong>October 29, 2025</strong><br>
-          Issued by Coursera &amp; Google Career Certificates
-        </p>
-
-        <a href="https://www.coursera.org/account/accomplishments/specialization/ZTZ3WCQD14Z1"
-           target="_blank" rel="noopener"
-           style="display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.1rem; border-radius:.85rem; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
-          Verify Certificate
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ==========================
-     CONTACT (Centered buttons side-by-side)
-     ========================== -->
-<section id="contact" style="padding: 4rem 0; border-top: 1px solid rgba(0,0,0,0.08);">
-  <div style="max-width: 900px; margin: 0 auto; padding: 0 2rem; text-align: center;">
-
-    <h2 style="margin: 0 0 1rem; font-size: 2rem;">Let’s Connect</h2>
-
-    <p style="font-size: 1.1rem; opacity: .85; margin: 0 0 2rem;">
-      Open to Business Intelligence, Operations Analytics, and Data Analyst opportunities.
-      I’m always interested in discussing data-driven problem solving and system design.
-    </p>
-
-    <!-- Buttons row -->
-    <div style="display:flex; justify-content:center; gap: 1rem; flex-wrap: wrap;">
-      <a href="mailto:jaylundharris@gmail.com"
-         style="display:inline-flex; align-items:center; justify-content:center; padding:.9rem 1.3rem; border-radius: 10px; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
-        Email Me
-      </a>
-
-      <a href="https://www.linkedin.com/in/jaylund-harris-571936384/" target="_blank" rel="noopener"
-         style="display:inline-flex; align-items:center; justify-content:center; padding:.9rem 1.3rem; border-radius: 10px; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
-        LinkedIn
-      </a>
-
-      <a href="https://github.com/Jaylundharris" target="_blank" rel="noopener"
-         style="display:inline-flex; align-items:center; justify-content:center; padding:.9rem 1.3rem; border-radius: 10px; background:#0b4dd9; color:#fff; text-decoration:none; font-weight:700;">
-        GitHub
-      </a>
-    </div>
-
-  </div>
-</section>
-
-    
-</main>
-
-
+  </main>
 
   <footer>
     © 2025 Jaylund Harris — Portfolio Website
   </footer>
 
+  <!-- theme persistence -->
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme');
@@ -802,126 +517,25 @@
         localStorage.setItem('theme', 'light');
       }
     }
-function toggleMoreProjects() {
-  const more = document.getElementById("moreProjects");
-  const btn = document.getElementById("moreBtn");
-  if (!more || !btn) return;
-
-  const isHidden = more.style.display === "none" || more.style.display === "";
-  more.style.display = isHidden ? "block" : "none";
-  btn.textContent = isHidden ? "Show Less Projects" : "Show More Projects";
-}
-
-
-
   </script>
-  <button id="backToTop" title="Go to top">↑ Top</button>
-<script>
-window.onscroll = function() {
-  let btn = document.getElementById("backToTop");
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    btn.style.display = "block";
-  } else {
-    btn.style.display = "none";
-  }
-};
 
-document.getElementById("backToTop").onclick = function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-</script>
+  <!-- back to top -->
+  <button id="backToTop" title="Go to top">↑ Top</button>
+  <script>
+    window.onscroll = function() {
+      const btn = document.getElementById("backToTop");
+      if (!btn) return;
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    document.getElementById("backToTop").onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
